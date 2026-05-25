@@ -30,7 +30,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <img src="/logo.png" alt="Caffeino" className="h-10 w-auto" />
+              <div className="bg-white rounded-lg px-3 py-1.5 shadow-sm border border-border/50">
+                <img src="/logo.png" alt="Caffeino" className="h-8 w-auto" />
+              </div>
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">
               Abu Dhabi's premier specialty coffee destination. Serving carefully curated coffee, 

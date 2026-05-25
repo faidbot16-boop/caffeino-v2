@@ -47,11 +47,13 @@ export default function Navbar() {
         <div className="section-padding flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <img 
-              src="/logo.png" 
-              alt="Caffeino" 
-              className="h-8 w-auto"
-            />
+            <div className="bg-white rounded-lg px-3 py-1.5 shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+              <img 
+                src="/logo.png" 
+                alt="Caffeino" 
+                className="h-7 w-auto"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
