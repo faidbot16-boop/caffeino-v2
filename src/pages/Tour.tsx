@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Play, RotateCcw } from "lucide-react";
 import { branches } from "../lib/branchData";
 
 export default function Tour() {
   const [activeBranch, setActiveBranch] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [iframeKey, setIframeKey] = useState(0);
   const [showIntro, setShowIntro] = useState(true);
 
-  const tourUrl = "https://www.google.com/maps/embed?pb=!4v1704067200000!6m8!1m7!1sCAoSLEFGMVFpcE1VZUdXZjBiU3dLRzVhb1VLZGpWcmJkZXpOTm1tRkVZbDVEZ2dM!2m2!1d24.4539!2d54.3773!3f80!4f0!5f0.7820865974627469";
+  const handleBranchChange = useCallback((index: number) => {
+    setActiveBranch(index);
+    setShowIntro(true);
+    setIframeKey((k) => k + 1);
+  }, []);
 
   return (
     <motion.div
@@ -24,13 +28,13 @@ export default function Tour() {
           className="text-center mb-8"
         >
           <span className="text-accent text-sm font-medium tracking-wider uppercase mb-4 block">
-            Virtual Experience
+            Locations
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-text-primary mb-4">
-            360° Tour
+            Find Us
           </h1>
           <p className="text-text-secondary max-w-xl mx-auto">
-            Explore our flagship location from anywhere in the world.
+            Explore all 5 Caffeino locations across Abu Dhabi.
           </p>
         </motion.div>
 
@@ -39,10 +43,7 @@ export default function Tour() {
           {branches.map((branch, index) => (
             <button
               key={branch.id}
-              onClick={() => {
-                setActiveBranch(index);
-                setIsLoading(true);
-              }}
+              onClick={() => handleBranchChange(index)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                 activeBranch === index
                   ? "bg-accent text-bg-dark"
@@ -74,7 +75,7 @@ export default function Tour() {
                   Welcome to {branches[activeBranch].name}
                 </h2>
                 <p className="text-text-secondary mb-8 max-w-md">
-                  Take a virtual walk through our space. Use your mouse or touch to look around.
+                  Find us on the map. Tap the branch buttons below to explore each location.
                 </p>
                 <button
                   onClick={() => setShowIntro(false)}
@@ -85,16 +86,6 @@ export default function Tour() {
                 </button>
               </motion.div>
             </motion.div>
-          )}
-
-          {/* Loading State */}
-          {isLoading && !showIntro && (
-            <div className="absolute inset-0 z-10 bg-bg-cream flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-12 h-12 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                <p className="text-text-secondary">Loading virtual tour...</p>
-              </div>
-            </div>
           )}
 
           {/* Custom Controls Overlay */}
@@ -109,7 +100,7 @@ export default function Tour() {
 
           <div className="absolute top-4 right-4 z-10 flex gap-2">
             <button
-              onClick={() => setIsLoading(true)}
+              onClick={() => setIframeKey((k) => k + 1)}
               className="glass-card p-2 rounded-lg text-text-secondary hover:text-accent transition-colors"
               title="Reset view"
             >
@@ -117,19 +108,21 @@ export default function Tour() {
             </button>
           </div>
 
-          {/* Street View Iframe */}
-          <iframe
-            src={tourUrl}
-            width="100%"
-            height="600"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title={`${branches[activeBranch].name} 360 Tour`}
-            onLoad={() => setIsLoading(false)}
-            className="w-full"
-          />
+          {/* Map Embed */}
+          {!showIntro && (
+            <iframe
+              key={iframeKey}
+              src={branches[activeBranch].mapEmbed}
+              width="100%"
+              height="600"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={`${branches[activeBranch].name} Location`}
+              className="w-full"
+            />
+          )}
 
           {/* Bottom Info Bar */}
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bg-cream/90 to-transparent p-6">
@@ -139,7 +132,7 @@ export default function Tour() {
                 <p className="text-text-secondary text-sm">{branches[activeBranch].address}</p>
               </div>
               <a
-                href={`https://www.google.com/maps/place/Caffeino/@24.4539,54.3773,17z`}
+                href={branches[activeBranch].mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-full bg-accent text-bg-dark text-sm font-medium hover:bg-accent-hover transition-colors"

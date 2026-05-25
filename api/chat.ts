@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-const OPENROUTER_API_KEY = process.env.VITE_OPENROUTER_API_KEY || "";
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 
 const SYSTEM_PROMPT = `You are Caffeino's AI assistant. You help customers with:
 - Menu information (specialty hot coffee, iced coffee, cold brew, non-coffee drinks, pastries, cakes, all-day brunch, bagels, croissants, salads, toasties)

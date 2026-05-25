@@ -17,7 +17,7 @@ const footerLinks = {
   ],
   support: [
     { name: "Contact Us", path: "/contact" },
-    { name: "360° Tour", path: "/tour" },
+    { name: "Locations", path: "/tour" },
     { name: "FAQ", path: "/contact" },
   ],
 };
