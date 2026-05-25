@@ -10,6 +10,7 @@ export interface Branch {
   };
   mapEmbed: string;
   mapLink: string;
+  streetView?: string;
   features: string[];
 }
 
@@ -26,6 +27,7 @@ export const branches: Branch[] = [
     },
     mapEmbed: "https://maps.google.com/maps?q=24.4519114,54.3361453&z=17&output=embed",
     mapLink: "https://www.google.com/maps/place/Caffeino+-+Al+Bateen/@24.4519163,54.3335704,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5e69b79cdff745:0x543eb9cb90cb9638!8m2!3d24.4519114!4d54.3361453!16s%2Fg%2F11mw6rw019",
+    streetView: "https://maps.google.com/maps?q=24.4519114,54.3361453&layer=c&cbll=24.4519114,54.3361453&cbp=11,0,0,0,0&output=embed&z=17",
     features: ["Indoor & Outdoor Seating", "Free WiFi", "Parking Available", "Pet Friendly Terrace", "Waterfront Views"],
   },
   {

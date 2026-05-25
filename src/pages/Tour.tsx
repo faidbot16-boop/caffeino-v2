@@ -83,7 +83,7 @@ export default function Tour() {
 
           <iframe
             key={iframeKey}
-            src={branches[activeBranch].mapEmbed}
+            src={branches[activeBranch].streetView || branches[activeBranch].mapEmbed}
             width="100%"
             height="600"
             style={{ border: 0 }}

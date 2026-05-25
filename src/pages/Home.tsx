@@ -66,21 +66,22 @@ function HeroSection() {
       
       <SteamParticles />
       
-      <motion.div style={{ y: textY, opacity: textOpacity }} className="relative z-10 text-center section-padding max-w-5xl mx-auto">
-        {/* Logo in hero */}
+      <motion.div style={{ y: textY, opacity: textOpacity }} className="relative z-10 section-padding max-w-5xl mx-auto">
+        {/* Logo left-aligned */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-8"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8 md:mb-10"
         >
           <img
             src="/logo.png"
             alt="Caffeino"
-            className="h-14 md:h-16 mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
+            className="h-14 md:h-16 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
 
+        <div className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -154,23 +155,9 @@ function HeroSection() {
             <div className="text-white/60 text-sm mt-1">Reviews</div>
           </div>
         </motion.div>
+        </div>
       </motion.div>
       
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
-        >
-          <div className="w-1 h-2 bg-white/60 rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
@@ -266,24 +253,25 @@ function FeaturedMenuSection() {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {featuredItems.map((item, index) => (
             <motion.div
               key={item?.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ y: -6 }}
+              className="group cursor-pointer"
             >
-              <div className="aspect-square rounded-xl overflow-hidden bg-bg-card mb-4">
+              <div className="aspect-square rounded-xl overflow-hidden bg-bg-card mb-4 shadow-md group-hover:shadow-xl transition-shadow duration-500">
                 <img
                   src={item?.image}
                   alt={item?.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
               </div>
-              <h3 className="text-text-primary font-medium mb-1">{item?.name}</h3>
+              <h3 className="text-text-primary font-semibold mb-1.5 group-hover:text-accent transition-colors">{item?.name}</h3>
               <p className="text-text-muted text-sm">Caffeino Specialty</p>
             </motion.div>
           ))}
@@ -327,12 +315,13 @@ function ReviewsSection() {
         </motion.div>
         
         {/* Scrolling marquee */}
-        <div className="relative">
-          <div className="flex gap-6 animate-marquee">
+        <div className="relative overflow-hidden">
+          <div className="flex gap-6 animate-marquee-fast">
             {[...reviews, ...reviews].map((review, index) => (
-              <div
+              <motion.div
                 key={`${review.id}-${index}`}
-                className="flex-shrink-0 w-[350px] glass-card rounded-xl p-6"
+                whileHover={{ scale: 1.02 }}
+                className="flex-shrink-0 w-[340px] glass-card rounded-xl p-6 hover:shadow-lg hover:border-accent/20 transition-all"
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
@@ -343,7 +332,7 @@ function ReviewsSection() {
                   "{review.text}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-medium">
+                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-semibold">
                     {review.name.charAt(0)}
                   </div>
                   <div>
@@ -351,9 +340,11 @@ function ReviewsSection() {
                     <div className="text-text-muted text-xs">{review.date}</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg-cream to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg-cream to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>
@@ -362,22 +353,26 @@ function ReviewsSection() {
 
 // Food Trucks Section
 function FoodTrucksSection() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+
   return (
-    <section className="py-24 lg:py-32 bg-bg-warm">
+    <section ref={ref} className="py-24 lg:py-32 bg-bg-warm overflow-hidden">
       <div className="section-padding max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            style={{ y: imageY }}
             className="order-2 lg:order-1"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-bg-card">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-bg-card shadow-lg">
               <img
                 src="/images/menu/toasties/24cd85ce2ad485a7917c1d9113897f73.jpg"
                 alt="Caffeino Food Truck"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           </motion.div>
@@ -386,7 +381,7 @@ function FoodTrucksSection() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2"
           >
             <span className="text-accent text-sm font-medium tracking-wider uppercase mb-4 block">
@@ -411,13 +406,20 @@ function FoodTrucksSection() {
                 { icon: MapPin, label: "Multiple Locations" },
                 { icon: Clock, label: "Flexible Hours" },
                 { icon: Star, label: "Same Quality" },
-              ].map((feature) => (
-                <div key={feature.label} className="flex items-center gap-3">
+              ].map((feature, i) => (
+                <motion.div
+                  key={feature.label}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                  className="flex items-center gap-3"
+                >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                     <feature.icon className="w-5 h-5 text-accent" />
                   </div>
                   <span className="text-text-secondary text-sm">{feature.label}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
             

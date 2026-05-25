@@ -112,6 +112,11 @@
   animation: marquee 40s linear infinite;
 }
 
-.animate-marquee:hover {
+.animate-marquee-fast {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-fast:hover {
   animation-play-state: paused;
 }
