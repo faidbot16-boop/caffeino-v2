@@ -13,6 +13,9 @@ dist-ssr
 *.local
 .env
 
+# Temp files (screenshots, etc.)
+.tmp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
