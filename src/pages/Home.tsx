@@ -38,10 +38,19 @@ function SteamParticles() {
 
 // Hero Section
 function HeroSection() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0">
+      <motion.div style={{ scale: videoScale }} className="absolute inset-0">
         <video
           autoPlay
           muted
@@ -52,32 +61,32 @@ function HeroSection() {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/75" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/80" />
+      </motion.div>
       
       <SteamParticles />
       
-      <div className="relative z-10 text-center section-padding max-w-5xl mx-auto">
+      <motion.div style={{ y: textY, opacity: textOpacity }} className="relative z-10 text-center section-padding max-w-5xl mx-auto">
         {/* Logo in hero */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
           <img
             src="/logo.png"
             alt="Caffeino"
-            className="h-14 md:h-16 mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+            className="h-14 md:h-16 mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm border border-white/10">
+          <span className="inline-block px-5 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-md border border-white/10">
             Abu Dhabi's Finest Specialty Coffee
           </span>
         </motion.div>
@@ -85,7 +94,7 @@ function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-6"
         >
           <span className="text-white">Where Every</span>
@@ -98,8 +107,8 @@ function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light"
         >
           Single-origin coffee, artisanal pastries, and all-day brunch 
           served across five iconic Abu Dhabi locations.
@@ -111,13 +120,13 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link to="/menu" className="btn-primary inline-flex items-center gap-2">
+          <Link to="/menu" className="btn-primary inline-flex items-center gap-2 text-base px-8 py-3.5 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 transition-all">
             Explore Menu
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
             to="/order"
-            className="px-6 py-3 rounded-full border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all"
+            className="px-8 py-3.5 rounded-full border border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all text-base backdrop-blur-sm"
           >
             Order Online
           </Link>
@@ -127,25 +136,25 @@ function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex items-center justify-center gap-8 mt-16"
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex items-center justify-center gap-8 mt-20"
         >
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-accent">5</div>
-            <div className="text-white/60 text-sm">Locations</div>
+            <div className="text-white/60 text-sm mt-1">Locations</div>
           </div>
           <div className="w-px h-10 bg-white/20" />
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-accent">62</div>
-            <div className="text-white/60 text-sm">Menu Items</div>
+            <div className="text-white/60 text-sm mt-1">Menu Items</div>
           </div>
           <div className="w-px h-10 bg-white/20" />
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-accent">5.4k+</div>
-            <div className="text-white/60 text-sm">Reviews</div>
+            <div className="text-white/60 text-sm mt-1">Reviews</div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
       
       {/* Scroll indicator */}
       <motion.div
@@ -159,7 +168,7 @@ function HeroSection() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
         >
-          <div className="w-1 h-2 bg-white rounded-full" />
+          <div className="w-1 h-2 bg-white/60 rounded-full" />
         </motion.div>
       </motion.div>
     </section>
@@ -489,18 +498,13 @@ function BranchesPreview() {
 // Main Home Page
 export default function Home() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <>
       <HeroSection />
       <AboutSection />
       <FeaturedMenuSection />
       <ReviewsSection />
       <FoodTrucksSection />
       <BranchesPreview />
-    </motion.div>
+    </>
   );
 }
