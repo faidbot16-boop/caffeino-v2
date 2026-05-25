@@ -59,7 +59,6 @@ function HeroSection() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.5, 0.85]);
-  const logoY = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, -130]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const statsY = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -78,13 +77,6 @@ function HeroSection() {
       <SteamParticles />
 
       <div className="relative z-10 section-padding max-w-5xl mx-auto pt-16">
-        <motion.div style={{ y: logoY, opacity: textOpacity }}
-          initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }} className="mb-8 md:mb-10">
-          <img src="/logo.png" alt="Caffeino"
-            className="h-14 md:h-16 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]" />
-        </motion.div>
-
         <motion.div style={{ y: textY, opacity: textOpacity }} className="text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}>

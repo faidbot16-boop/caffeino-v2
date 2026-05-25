@@ -132,23 +132,28 @@
   "Croissants": [
     {
       "name": "Almond Croissant",
-      "image": "/images/menu/main_course/292c609bad4481fc8a0a2af25ce9f1fa.jpg"
+      "image": "/images/menu/main_course/292c609bad4481fc8a0a2af25ce9f1fa.jpg",
+      "price": 20
     },
     {
       "name": "Butter Croissant",
-      "image": "/images/menu/main_course/24d40077417c1550feb652fe1fc3b4f4.jpg"
+      "image": "/images/menu/main_course/24d40077417c1550feb652fe1fc3b4f4.jpg",
+      "price": 13
     },
     {
       "name": "Cheese Croissant",
-      "image": "/images/menu/main_course/7774a5d7b17592d7b459097fd3bafc1c.jpg"
+      "image": "/images/menu/main_course/7774a5d7b17592d7b459097fd3bafc1c.jpg",
+      "price": 20
     },
     {
       "name": "Chocolate Croissant",
-      "image": "/images/menu/main_course/73c04e312e9b80a405591d1db10fa831.jpg"
+      "image": "/images/menu/main_course/73c04e312e9b80a405591d1db10fa831.jpg",
+      "price": 16
     },
     {
       "name": "Halloumi Croissant",
-      "image": "/images/menu/pastries/d67d51bed390b9b56524bd12a959f3e8.jpg"
+      "image": "/images/menu/pastries/d67d51bed390b9b56524bd12a959f3e8.jpg",
+      "price": 20
     },
     {
       "name": "Pistachio Croissant",
@@ -156,11 +161,13 @@
     },
     {
       "name": "Zaatar and Mozzarella Croissant",
-      "image": "/images/menu/pastries/47b73793866e7c77a4d56e753921f01f.jpg"
+      "image": "/images/menu/pastries/47b73793866e7c77a4d56e753921f01f.jpg",
+      "price": 22
     },
     {
       "name": "Zaatar Croissant",
-      "image": "/images/menu/pastries/9089e49cf7af4fae05b89f470131c95a.jpg"
+      "image": "/images/menu/pastries/9089e49cf7af4fae05b89f470131c95a.jpg",
+      "price": 17
     }
   ],
   "Main Course": [
@@ -180,7 +187,8 @@
   "Pastries": [
     {
       "name": "Babka Cheese and Olive",
-      "image": "/images/menu/salads/724297eea1d4c78040ced6f22ed7771b.jpg"
+      "image": "/images/menu/salads/724297eea1d4c78040ced6f22ed7771b.jpg",
+      "price": 20
     },
     {
       "name": "Babka Chocolate",
@@ -192,11 +200,13 @@
     },
     {
       "name": "Babka Nutella",
-      "image": "/images/menu/salads/aa41dcb74165eb2136c943452231de93.jpg"
+      "image": "/images/menu/salads/aa41dcb74165eb2136c943452231de93.jpg",
+      "price": 22
     },
     {
       "name": "Babka Pistachio",
-      "image": "/images/menu/salads/3d267c96b797c980dbc1772a5c6d297d.jpg"
+      "image": "/images/menu/salads/3d267c96b797c980dbc1772a5c6d297d.jpg",
+      "price": 22
     },
     {
       "name": "Banana Chocolate Danish",
@@ -208,15 +218,18 @@
     },
     {
       "name": "Cookie",
-      "image": "/images/menu/toasties/c00b32875b095af771cd90d88c97e35d.jpg"
+      "image": "/images/menu/toasties/c00b32875b095af771cd90d88c97e35d.jpg",
+      "price": 12
     },
     {
       "name": "Danish Strawberry",
-      "image": "/images/menu/toasties/b408078f5a5d546a8d9d8f3bf090a971.jpg"
+      "image": "/images/menu/toasties/b408078f5a5d546a8d9d8f3bf090a971.jpg",
+      "price": 20
     },
     {
       "name": "English Scones",
-      "image": "/images/menu/toasties/4da312d36f9202256dcec1e6e734e73e.jpg"
+      "image": "/images/menu/toasties/4da312d36f9202256dcec1e6e734e73e.jpg",
+      "price": 20
     },
     {
       "name": "Nutty Square",
@@ -224,11 +237,13 @@
     },
     {
       "name": "Pecan Pie",
-      "image": "/images/menu/toasties/4f632491528093109a3d90f3093b47b5.jpg"
+      "image": "/images/menu/toasties/4f632491528093109a3d90f3093b47b5.jpg",
+      "price": 33
     },
     {
       "name": "Raisin Cinnamon Swirls",
-      "image": "/images/menu/toasties/140478b032bf46041711f929f2fff5e0.jpg"
+      "image": "/images/menu/toasties/140478b032bf46041711f929f2fff5e0.jpg",
+      "price": 17
     }
   ],
   "Salads": [
