@@ -7,7 +7,7 @@ const events = [
     title: "Coffee Cupping Workshop",
     date: "Every Saturday",
     time: "10:00 AM - 12:00 PM",
-    location: "Marina Al Bateen",
+    location: "Al Bateen",
     description: "Learn to taste and evaluate specialty coffee like a pro. Limited to 12 participants.",
     price: "AED 120",
   },

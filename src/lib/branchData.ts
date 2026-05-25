@@ -8,15 +8,15 @@ export interface Branch {
     weekday: string;
     weekend: string;
   };
-  mapUrl: string;
+  mapEmbed: string;
   mapLink: string;
   features: string[];
 }
 
 export const branches: Branch[] = [
   {
-    id: "marina-al-bateen",
-    name: "Marina Al Bateen",
+    id: "al-bateen",
+    name: "Al Bateen",
     address: "Al Bateen Marina, Abu Dhabi, UAE",
     phone: "+971 2 666 8887",
     whatsapp: "https://wa.me/97126668887",
@@ -24,8 +24,8 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdef!2sCaffeino%20Al%20Bateen%20Marina!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    mapLink: "https://maps.app.goo.gl/CaffeinoAlBateen",
+    mapEmbed: "https://maps.google.com/maps?q=24.4519114,54.3361453&z=17&output=embed",
+    mapLink: "https://www.google.com/maps/place/Caffeino+-+Al+Bateen/@24.4519163,54.3335704,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5e69b79cdff745:0x543eb9cb90cb9638!8m2!3d24.4519114!4d54.3361453!16s%2Fg%2F11mw6rw019",
     features: ["Indoor & Outdoor Seating", "Free WiFi", "Parking Available", "Pet Friendly Terrace", "Waterfront Views"],
   },
   {
@@ -38,23 +38,9 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdf0!2sCaffeino%20Mahawi!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    mapLink: "https://maps.app.goo.gl/CaffeinoMahawi",
+    mapEmbed: "https://maps.google.com/maps?q=24.3390647,54.579187&z=17&output=embed",
+    mapLink: "https://www.google.com/maps/place/Caffeino+-+Mahawi/@24.3915024,54.3788809,12z/data=!4m6!3m5!1s0x3e5e6547bfc1f953:0x627252135f1369a5!8m2!3d24.3390647!4d54.579187!16s%2Fg%2F11g0mrfjxg",
     features: ["Indoor Seating", "Free WiFi", "Drive-Thru Available", "Quick Service"],
-  },
-  {
-    id: "al-bahia",
-    name: "Al Bahia",
-    address: "Al Bahia, Abu Dhabi, UAE",
-    phone: "+971 54 307 6777",
-    whatsapp: "https://wa.me/971543076777",
-    hours: {
-      weekday: "7:00 AM – 11:00 PM",
-      weekend: "7:00 AM – 12:00 AM",
-    },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdf1!2sCaffeino%20Al%20Bahia!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    mapLink: "https://maps.app.goo.gl/CaffeinoAlBahia",
-    features: ["Indoor & Outdoor Seating", "Free WiFi", "Kids Play Area", "Family Friendly"],
   },
   {
     id: "khalifa-city",
@@ -66,9 +52,37 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdf2!2sCaffeino%20Khalifa%20City!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    mapLink: "https://maps.app.goo.gl/CaffeinoKhalifaCity",
+    mapEmbed: "https://maps.google.com/maps?q=24.405302,54.6021864&z=17&output=embed",
+    mapLink: "https://www.google.com/maps/place/Caffeino+-+Khalifa+City/@24.4053069,54.5996115,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5e4719d6eb3b95:0xfec274c809c107c6!8m2!3d24.405302!4d54.6021864!16s%2Fg%2F11rr1ypwq1",
     features: ["Indoor Seating", "Free WiFi", "Meeting Room Available", "Work Friendly"],
+  },
+  {
+    id: "al-falah",
+    name: "Al Falah",
+    address: "Al Falah, Abu Dhabi, UAE",
+    phone: "+971 54 307 3777",
+    whatsapp: "https://wa.me/971543073777",
+    hours: {
+      weekday: "7:00 AM – 11:00 PM",
+      weekend: "7:00 AM – 12:00 AM",
+    },
+    mapEmbed: "https://maps.google.com/maps?q=24.4488951,54.7076759&z=17&output=embed",
+    mapLink: "https://www.google.com/maps/place/Caffeino+-+Al+Falah/@24.4489,54.705101,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5e4b0e69d4a6a7:0xf9bb5fe5121701ed!8m2!3d24.4488951!4d54.7076759!16s%2Fg%2F11tss9gght",
+    features: ["Indoor & Outdoor Seating", "Free WiFi", "Family Friendly", "Kids Area"],
+  },
+  {
+    id: "al-bahia",
+    name: "Al Bahia",
+    address: "Al Bahia, Abu Dhabi, UAE",
+    phone: "+971 54 307 6777",
+    whatsapp: "https://wa.me/971543076777",
+    hours: {
+      weekday: "7:00 AM – 11:00 PM",
+      weekend: "7:00 AM – 12:00 AM",
+    },
+    mapEmbed: "https://maps.google.com/maps?q=24.5213027,54.6690092&z=17&output=embed",
+    mapLink: "https://www.google.com/maps/place/Caffeino+-+Al+Bahia/@24.5213076,54.6664343,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5e65ea2ca3fcd9:0xf7434136385bdbcf!8m2!3d24.5213027!4d54.6690092!16s%2Fg%2F11f4_7zhlz",
+    features: ["Indoor & Outdoor Seating", "Free WiFi", "Kids Play Area", "Family Friendly"],
   },
 ];
 

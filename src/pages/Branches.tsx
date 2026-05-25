@@ -141,7 +141,7 @@ export default function Branches() {
           {/* Map */}
           <div className="glass-card rounded-2xl overflow-hidden">
             <iframe
-              src={branches[activeBranch].mapUrl}
+              src={branches[activeBranch].mapEmbed}
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "400px" }}

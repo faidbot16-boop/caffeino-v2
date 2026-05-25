@@ -15,7 +15,7 @@ const jobs = [
   {
     id: 2,
     title: "Head Chef",
-    location: "Marina Al Bateen",
+    location: "Al Bateen",
     type: "Full-time",
     salary: "AED 8,000 - 12,000",
     description: "Lead our kitchen team in creating exceptional breakfast and brunch dishes. Creative mindset required.",

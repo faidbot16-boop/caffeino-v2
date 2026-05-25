@@ -116,7 +116,7 @@ export default function ChatBot() {
       return "We're open Sunday–Thursday from 7am to 11pm, and Friday–Saturday from 7am to 12am. Perfect for early morning coffee or late evening treats!";
     }
     if (lower.includes("location") || lower.includes("where") || lower.includes("branch")) {
-      return "We have 4 locations across Abu Dhabi:\n\n1. **Marina Al Bateen**\n2. **Mahawi**\n3. **Al Bahia**\n4. **Khalifa City**\n\nWhich one is closest to you?";
+      return "We have 5 locations across Abu Dhabi:\n\n1. **Al Bateen**\n2. **Mahawi**\n3. **Khalifa City**\n4. **Al Falah**\n5. **Al Bahia**\n\nWhich one is closest to you?";
     }
     if (lower.includes("menu") || lower.includes("coffee") || lower.includes("food")) {
       return "Our menu includes:\n\n☕ **Specialty Coffee**\n🥐 **Croissants & Pastries**\n🍳 **All-Day Breakfast**\n🥯 **Bagels**\n🥗 **Salads**\n🍰 **Cakes**\n\nCheck out our full menu at /menu!";
