@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ChevronRight, Sparkles } from "lucide-react";
 import { menuCategories, type MenuItem } from "../lib/menuData";
+import TiltCard from "../components/TiltCard";
 
 function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
   return (
@@ -9,21 +10,22 @@ function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.04, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      whileHover={{ y: -6 }}
-      className="flex-shrink-0 w-[180px] md:w-[220px] lg:w-[260px] group cursor-pointer"
+      className="flex-shrink-0 w-[180px] md:w-[220px] lg:w-[260px] cursor-pointer"
     >
-      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-bg-espresso/40 mb-3 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-        <img
-          src={item.image}
-          alt={item.name}
-          loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-espresso/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
-      </div>
-      <h3 className="text-text-light font-medium text-sm text-center px-1 leading-snug group-hover:text-accent transition-colors">
-        {item.name}
-      </h3>
+      <TiltCard tiltAmount={8} className="rounded-2xl overflow-hidden bg-bg-espresso/40 shadow-lg">
+        <div className="relative aspect-[3/4] overflow-hidden">
+          <img
+            src={item.image}
+            alt={item.name}
+            loading="lazy"
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg-espresso/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        </div>
+        <h3 className="text-text-light font-medium text-sm text-center px-3 py-3 leading-snug hover:text-accent transition-colors bg-bg-espresso/60">
+          {item.name}
+        </h3>
+      </TiltCard>
     </motion.div>
   );
 }

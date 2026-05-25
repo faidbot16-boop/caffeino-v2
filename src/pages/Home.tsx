@@ -1,10 +1,41 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { ArrowRight, Star, Truck, MapPin, Clock } from "lucide-react";
 import { featuredItems } from "../lib/menuData";
 import { reviews } from "../lib/reviewData";
 import { branches } from "../lib/branchData";
+import TiltCard from "../components/TiltCard";
+
+function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let start = 0;
+    const duration = 1200;
+    const step = Math.max(1, Math.floor(target / 30));
+    const interval = duration / (target / step);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, interval);
+    return () => clearInterval(timer);
+  }, [isInView, target]);
+
+  return (
+    <div ref={ref} className="text-2xl md:text-3xl font-bold text-accent">
+      {count}{suffix}
+    </div>
+  );
+}
 
 // Animated steam particles
 function SteamParticles() {
@@ -141,12 +172,12 @@ function HeroSection() {
           className="flex items-center justify-center gap-8 mt-20"
         >
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-accent">5</div>
+            <AnimatedCounter target={5} />
             <div className="text-white/60 text-sm mt-1">Locations</div>
           </div>
           <div className="w-px h-10 bg-white/20" />
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-accent">62</div>
+            <AnimatedCounter target={62} />
             <div className="text-white/60 text-sm mt-1">Menu Items</div>
           </div>
           <div className="w-px h-10 bg-white/20" />
@@ -261,18 +292,20 @@ function FeaturedMenuSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
-              whileHover={{ y: -6 }}
-              className="group cursor-pointer"
             >
-              <div className="aspect-square rounded-xl overflow-hidden bg-bg-card mb-4 shadow-md group-hover:shadow-xl transition-shadow duration-500">
-                <img
-                  src={item?.image}
-                  alt={item?.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-              </div>
-              <h3 className="text-text-primary font-semibold mb-1.5 group-hover:text-accent transition-colors">{item?.name}</h3>
-              <p className="text-text-muted text-sm">Caffeino Specialty</p>
+              <TiltCard className="rounded-xl overflow-hidden bg-bg-card shadow-md cursor-pointer" tiltAmount={6}>
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={item?.image}
+                    alt={item?.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-text-primary font-semibold mb-1.5 group-hover:text-accent transition-colors">{item?.name}</h3>
+                  <p className="text-text-muted text-sm">Caffeino Specialty</p>
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
@@ -290,8 +323,15 @@ function FeaturedMenuSection() {
 
 // Reviews Section
 function ReviewsSection() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const marqueeY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   return (
-    <section className="py-24 lg:py-32 overflow-hidden">
+    <section ref={ref} className="py-24 lg:py-32 overflow-hidden">
       <div className="section-padding max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -314,8 +354,8 @@ function ReviewsSection() {
           </div>
         </motion.div>
         
-        {/* Scrolling marquee */}
-        <div className="relative overflow-hidden">
+        {/* Scrolling marquee with parallax */}
+        <motion.div style={{ y: marqueeY }} className="relative overflow-hidden">
           <div className="flex gap-6 animate-marquee-fast">
             {[...reviews, ...reviews].map((review, index) => (
               <motion.div
@@ -345,7 +385,7 @@ function ReviewsSection() {
           </div>
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg-cream to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg-cream to-transparent z-10 pointer-events-none" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
