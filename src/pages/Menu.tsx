@@ -11,7 +11,7 @@ function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
       transition={{ delay: index * 0.05 }}
       className="group"
     >
-      <div className="aspect-square rounded-xl overflow-hidden bg-bg-elevated mb-3">
+      <div className="aspect-square rounded-xl overflow-hidden bg-bg-card mb-3">
         <img
           src={item.image}
           alt={item.name}
@@ -69,7 +69,7 @@ export default function Menu() {
               placeholder="Search menu items..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-full bg-bg-surface border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+              className="w-full pl-12 pr-4 py-3 rounded-full bg-bg-warm border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function Menu() {
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   activeCategory === index
                     ? "bg-accent text-bg-dark"
-                    : "bg-bg-surface text-text-secondary hover:text-text-primary border border-border"
+                    : "bg-bg-warm text-text-secondary hover:text-text-primary border border-border"
                 }`}
               >
                 {category.name}

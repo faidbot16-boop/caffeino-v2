@@ -46,7 +46,7 @@ export default function Tour() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                 activeBranch === index
                   ? "bg-accent text-bg-dark"
-                  : "bg-bg-surface text-text-secondary hover:text-text-primary border border-border"
+                  : "bg-bg-warm text-text-secondary hover:text-text-primary border border-border"
               }`}
             >
               <MapPin className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function Tour() {
             <motion.div
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 z-20 bg-bg-dark/95 flex flex-col items-center justify-center"
+              className="absolute inset-0 z-20 bg-bg-cream/95 flex flex-col items-center justify-center"
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -89,7 +89,7 @@ export default function Tour() {
 
           {/* Loading State */}
           {isLoading && !showIntro && (
-            <div className="absolute inset-0 z-10 bg-bg-dark flex items-center justify-center">
+            <div className="absolute inset-0 z-10 bg-bg-cream flex items-center justify-center">
               <div className="text-center">
                 <div className="w-12 h-12 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="text-text-secondary">Loading virtual tour...</p>
@@ -132,7 +132,7 @@ export default function Tour() {
           />
 
           {/* Bottom Info Bar */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bg-dark/90 to-transparent p-6">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bg-cream/90 to-transparent p-6">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-text-primary font-medium">{branches[activeBranch].name}</h3>

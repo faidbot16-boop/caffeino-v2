@@ -70,7 +70,7 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -81,7 +81,7 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -94,7 +94,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         placeholder="+971 XX XXX XXXX"
                       />
                     </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                       <select
                         value={formData.branch}
                         onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary focus:outline-none focus:border-accent transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary focus:outline-none focus:border-accent transition-colors"
                       >
                         <option value="">Select a branch</option>
                         {branches.map((branch) => (
@@ -122,7 +122,7 @@ export default function Contact() {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
                       placeholder="How can we help?"
                     />
                   </div>

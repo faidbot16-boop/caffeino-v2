@@ -39,7 +39,7 @@ export default function Branches() {
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                 activeBranch === index
                   ? "bg-accent text-bg-dark"
-                  : "bg-bg-surface text-text-secondary hover:text-text-primary border border-border"
+                  : "bg-bg-warm text-text-secondary hover:text-text-primary border border-border"
               }`}
             >
               {branch.name}
@@ -108,7 +108,7 @@ export default function Branches() {
               {branches[activeBranch].features.map((feature) => (
                 <span
                   key={feature}
-                  className="px-3 py-1.5 rounded-full bg-bg-elevated text-text-secondary text-sm"
+                  className="px-3 py-1.5 rounded-full bg-bg-card text-text-secondary text-sm"
                 >
                   {feature}
                 </span>

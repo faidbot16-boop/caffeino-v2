@@ -78,7 +78,7 @@ export default function Events() {
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                   <Calendar className="w-6 h-6 text-accent" />
                 </div>
-                <span className="px-3 py-1 rounded-full bg-bg-elevated text-accent text-sm font-medium">
+                <span className="px-3 py-1 rounded-full bg-bg-card text-accent text-sm font-medium">
                   {event.price}
                 </span>
               </div>

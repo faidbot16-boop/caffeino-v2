@@ -41,7 +41,7 @@ function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bg-dark via-bg-dark to-bg-surface" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg-cream via-bg-dark to-bg-warm" />
       
       {/* Ambient glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
@@ -194,7 +194,7 @@ function AboutSection() {
             style={{ y }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-surface">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-warm">
               <img
                 src="/images/menu/breakfast/5cc0d3a3f9faf6ed42723555f236366a.jpg"
                 alt="Caffeino interior"
@@ -215,7 +215,7 @@ function AboutSection() {
 // Featured Menu Section
 function FeaturedMenuSection() {
   return (
-    <section className="py-24 lg:py-32 bg-bg-surface">
+    <section className="py-24 lg:py-32 bg-bg-warm">
       <div className="section-padding max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -244,7 +244,7 @@ function FeaturedMenuSection() {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="aspect-square rounded-xl overflow-hidden bg-bg-elevated mb-4">
+              <div className="aspect-square rounded-xl overflow-hidden bg-bg-card mb-4">
                 <img
                   src={item?.image}
                   alt={item?.name}
@@ -331,7 +331,7 @@ function ReviewsSection() {
 // Food Trucks Section
 function FoodTrucksSection() {
   return (
-    <section className="py-24 lg:py-32 bg-bg-surface">
+    <section className="py-24 lg:py-32 bg-bg-warm">
       <div className="section-padding max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -341,7 +341,7 @@ function FoodTrucksSection() {
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-bg-elevated">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-bg-card">
               <img
                 src="/images/menu/toasties/24cd85ce2ad485a7917c1d9113897f73.jpg"
                 alt="Caffeino Food Truck"
@@ -442,7 +442,7 @@ function BranchesPreview() {
                 {branch.features.slice(0, 2).map((feature) => (
                   <span
                     key={feature}
-                    className="text-xs px-2 py-1 rounded-full bg-bg-elevated text-text-secondary"
+                    className="text-xs px-2 py-1 rounded-full bg-bg-card text-text-secondary"
                   >
                     {feature}
                   </span>

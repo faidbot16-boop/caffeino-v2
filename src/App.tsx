@@ -16,7 +16,7 @@ import ChatBot from "./components/chatbot/ChatBot";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-bg-dark text-text-primary">
+      <div className="min-h-screen flex flex-col bg-bg-cream text-text-primary">
         <Navbar />
         <main className="flex-1">
           <AnimatePresence mode="wait">

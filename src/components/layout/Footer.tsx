@@ -24,7 +24,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-surface border-t border-border">
+    <footer className="bg-bg-warm border-t border-border">
       <div className="section-padding py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
@@ -44,7 +44,7 @@ export default function Footer() {
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-bg-elevated flex items-center justify-center text-text-secondary hover:text-accent hover:bg-border transition-all"
+                className="w-10 h-10 rounded-full bg-bg-card flex items-center justify-center text-text-secondary hover:text-accent hover:bg-border transition-all"
               >
                 <Globe className="w-5 h-5" />
               </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href={socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-bg-elevated flex items-center justify-center text-text-secondary hover:text-accent hover:bg-border transition-all"
+                className="w-10 h-10 rounded-full bg-bg-card flex items-center justify-center text-text-secondary hover:text-accent hover:bg-border transition-all"
               >
                 <MessageSquare className="w-5 h-5" />
               </a>
@@ -60,7 +60,7 @@ export default function Footer() {
                 href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-bg-elevated flex items-center justify-center text-text-secondary hover:text-accent hover:bg-border transition-all"
+                className="w-10 h-10 rounded-full bg-bg-card flex items-center justify-center text-text-secondary hover:text-accent hover:bg-border transition-all"
               >
                 <Phone className="w-5 h-5" />
               </a>

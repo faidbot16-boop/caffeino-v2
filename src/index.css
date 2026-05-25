@@ -2,17 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 @theme {
-  --color-bg-dark: #0A0A0A;
-  --color-bg-surface: #141414;
-  --color-bg-elevated: #1A1A1A;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #A3A3A3;
-  --color-text-muted: #737373;
-  --color-accent: #C4A484;
-  --color-accent-hover: #D4B894;
-  --color-accent-dark: #8B7355;
-  --color-border: #262626;
-  --color-border-light: #333333;
+  --color-bg-cream: #F7E8D7;
+  --color-bg-warm: #F4F1EA;
+  --color-bg-white: #FFFFFF;
+  --color-bg-card: #FAF8F3;
+  --color-text-primary: #2B2A26;
+  --color-text-secondary: #7A746B;
+  --color-text-muted: #A3A3A3;
+  --color-accent: #A23A2D;
+  --color-accent-hover: #C44A3A;
+  --color-accent-dark: #7A2C22;
+  --color-border: #E5E0D5;
+  --color-border-light: #EDE8DD;
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 }
@@ -23,7 +24,7 @@
   }
   
   body {
-    background-color: var(--color-bg-dark);
+    background-color: var(--color-bg-cream);
     color: var(--color-text-primary);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -32,27 +33,27 @@
 
   ::selection {
     background-color: var(--color-accent);
-    color: var(--color-bg-dark);
+    color: #FFFFFF;
   }
 }
 
 @layer components {
   .gradient-text {
-    background: linear-gradient(135deg, #C4A484 0%, #D4B894 50%, #E8D5C4 100%);
+    background: linear-gradient(135deg, #A23A2D 0%, #C44A3A 50%, #D4846A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass-card {
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(250, 248, 243, 0.95);
     backdrop-filter: blur(12px);
     border: 1px solid var(--color-border);
   }
 
   .btn-primary {
     background: var(--color-accent);
-    color: var(--color-bg-dark);
+    color: #FFFFFF;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     font-weight: 500;
@@ -62,7 +63,7 @@
   .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(196, 164, 132, 0.25);
+    box-shadow: 0 8px 24px rgba(162, 58, 45, 0.25);
   }
 
   .section-padding {

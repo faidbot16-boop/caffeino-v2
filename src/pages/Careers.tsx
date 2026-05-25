@@ -124,7 +124,7 @@ export default function Careers() {
                   {job.requirements.map((req) => (
                     <span
                       key={req}
-                      className="px-3 py-1 rounded-full bg-bg-elevated text-text-secondary text-xs"
+                      className="px-3 py-1 rounded-full bg-bg-card text-text-secondary text-xs"
                     >
                       {req}
                     </span>
@@ -171,7 +171,7 @@ export default function Careers() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -182,7 +182,7 @@ export default function Careers() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -193,7 +193,7 @@ export default function Careers() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                       placeholder="+971 XX XXX XXXX"
                     />
                   </div>
@@ -203,7 +203,7 @@ export default function Careers() {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-bg-card border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
                       placeholder="Tell us about yourself..."
                     />
                   </div>
