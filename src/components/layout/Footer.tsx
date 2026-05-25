@@ -30,8 +30,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-white rounded-lg px-3 py-1.5 shadow-sm border border-border/50">
-                <img src="/logo.png" alt="Caffeino" className="h-8 w-auto" />
+              <div className="rounded-lg px-3 py-1.5">
+                <img src="/logo.png" alt="Caffeino" className="h-9 w-auto drop-shadow-sm" />
               </div>
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">

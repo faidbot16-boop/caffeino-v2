@@ -47,11 +47,11 @@ export default function Navbar() {
         <div className="section-padding flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-white rounded-lg px-3 py-1.5 shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+            <div className="rounded-lg px-3 py-1.5 transition-all">
               <img 
                 src="/logo.png" 
                 alt="Caffeino" 
-                className="h-7 w-auto"
+                className="h-8 w-auto drop-shadow-sm"
               />
             </div>
           </Link>

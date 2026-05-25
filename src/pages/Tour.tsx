@@ -63,7 +63,7 @@ export default function Tour() {
             <motion.div
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 z-20 bg-bg-cream/95 flex flex-col items-center justify-center"
+              className="absolute inset-0 z-30 bg-bg-cream/95 flex flex-col items-center justify-center"
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}

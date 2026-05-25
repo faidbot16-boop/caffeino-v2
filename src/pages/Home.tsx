@@ -52,18 +52,32 @@ function HeroSection() {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/75" />
       </div>
       
       <SteamParticles />
       
       <div className="relative z-10 text-center section-padding max-w-5xl mx-auto">
+        {/* Logo in hero */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium mb-6 backdrop-blur-sm">
+          <img
+            src="/logo.png"
+            alt="Caffeino"
+            className="h-14 md:h-16 mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm border border-white/10">
             Abu Dhabi's Finest Specialty Coffee
           </span>
         </motion.div>
@@ -71,12 +85,12 @@ function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-6"
         >
           <span className="text-white">Where Every</span>
           <br />
-          <span className="text-white/90">Sip Tells</span>
+          <span className="text-accent">Sip Tells</span>
           <br />
           <span className="text-white">a Story</span>
         </motion.h1>
@@ -84,17 +98,17 @@ function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10"
         >
           Single-origin coffee, artisanal pastries, and all-day brunch 
-          served across four iconic Abu Dhabi locations.
+          served across five iconic Abu Dhabi locations.
         </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link to="/menu" className="btn-primary inline-flex items-center gap-2">
@@ -117,18 +131,18 @@ function HeroSection() {
           className="flex items-center justify-center gap-8 mt-16"
         >
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
-            <div className="text-text-muted text-sm">Locations</div>
+            <div className="text-2xl md:text-3xl font-bold text-accent">5</div>
+            <div className="text-white/60 text-sm">Locations</div>
           </div>
-          <div className="w-px h-10 bg-border" />
+          <div className="w-px h-10 bg-white/20" />
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-accent">60+</div>
-            <div className="text-text-muted text-sm">Menu Items</div>
+            <div className="text-2xl md:text-3xl font-bold text-accent">62</div>
+            <div className="text-white/60 text-sm">Menu Items</div>
           </div>
-          <div className="w-px h-10 bg-border" />
+          <div className="w-px h-10 bg-white/20" />
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-accent">5.4k+</div>
-            <div className="text-text-muted text-sm">Reviews</div>
+            <div className="text-white/60 text-sm">Reviews</div>
           </div>
         </motion.div>
       </div>
@@ -194,7 +208,7 @@ function AboutSection() {
               </div>
               <div className="flex items-center gap-2 text-text-secondary">
                 <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-sm">4 Abu Dhabi Locations</span>
+                <span className="text-sm">5 Abu Dhabi Locations</span>
               </div>
             </div>
           </motion.div>

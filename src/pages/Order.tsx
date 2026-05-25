@@ -89,7 +89,7 @@ export default function Order() {
             Prefer to Dine In?
           </h3>
           <p className="text-text-secondary mb-6">
-            Visit any of our four locations across Abu Dhabi for the full Caffeino experience.
+            Visit any of our five locations across Abu Dhabi for the full Caffeino experience.
           </p>
           <a href="/branches" className="btn-primary inline-flex items-center gap-2">
             Find a Branch
