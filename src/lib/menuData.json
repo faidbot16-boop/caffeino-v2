@@ -27,16 +27,16 @@
     {
       "name": "Egg and Avocado Bagel",
       "image": "/images/menu/bagel_sandwich/115cf4e262026efc7bf4a7caccbcd43f.jpg"
+    },
+    {
+      "name": "Halloumi Bagel",
+      "image": "/images/menu/breakfast/9e749f62dad93f6fc5dd5e03ec58cb95.jpg"
     }
   ],
   "Breakfast": [
     {
       "name": "Everything Veggie",
       "image": "/images/menu/breakfast/a9e3adab051fbd286dcc56c9bc281abb.jpg"
-    },
-    {
-      "name": "Halloumi Bagel",
-      "image": "/images/menu/breakfast/9e749f62dad93f6fc5dd5e03ec58cb95.jpg"
     },
     {
       "name": "Smoked Salmon",
@@ -57,9 +57,7 @@
     {
       "name": "Classic Brioche French Toast",
       "image": "/images/menu/breakfast/5cc0d3a3f9faf6ed42723555f236366a.jpg"
-    }
-  ],
-  "Cakes": [
+    },
     {
       "name": "Eggs Benedict",
       "image": "/images/menu/cakes/f9778adf8af11ee5499be17c45a4091e.jpg"
@@ -75,7 +73,9 @@
     {
       "name": "Shakhshuka",
       "image": "/images/menu/cakes/199c6bca7259239f433fc2a112f6fcb3.jpg"
-    },
+    }
+  ],
+  "Cakes": [
     {
       "name": "Acai Cheese Cake",
       "image": "/images/menu/cakes/e1cd048baa0c1ffa875d5865c8faa85e.jpg"
@@ -87,9 +87,7 @@
     {
       "name": "Cheese Cake Flan",
       "image": "/images/menu/cakes/3a2a4c167937ec50a9405bcf03a049a9.jpg"
-    }
-  ],
-  "Croissants": [
+    },
     {
       "name": "Chocolate Fudge Cake",
       "image": "/images/menu/croissants/49f58bab8d1946a297287611e0664235.jpg"
@@ -117,9 +115,7 @@
     {
       "name": "One and Only Chocolate Cake",
       "image": "/images/menu/croissants/be440fcfcdd97aa7a4f08016fdec94d9.jpg"
-    }
-  ],
-  "Main Course": [
+    },
     {
       "name": "Pistachio Cake",
       "image": "/images/menu/main_course/2ce0e3ab95e8adf4d4bfb04b1f86e784.jpg"
@@ -131,7 +127,9 @@
     {
       "name": "Strawberry  Cake",
       "image": "/images/menu/main_course/63d23565dbd8aa4d5bb0da4a5e0c53be.jpg"
-    },
+    }
+  ],
+  "Croissants": [
     {
       "name": "Almond Croissant",
       "image": "/images/menu/main_course/292c609bad4481fc8a0a2af25ce9f1fa.jpg"
@@ -147,9 +145,7 @@
     {
       "name": "Chocolate Croissant",
       "image": "/images/menu/main_course/73c04e312e9b80a405591d1db10fa831.jpg"
-    }
-  ],
-  "Pastries": [
+    },
     {
       "name": "Halloumi Croissant",
       "image": "/images/menu/pastries/d67d51bed390b9b56524bd12a959f3e8.jpg"
@@ -165,7 +161,9 @@
     {
       "name": "Zaatar Croissant",
       "image": "/images/menu/pastries/9089e49cf7af4fae05b89f470131c95a.jpg"
-    },
+    }
+  ],
+  "Main Course": [
     {
       "name": "Chicken with Spicy Mushroom Sauce",
       "image": "/images/menu/pastries/04710d1cc57cfc569cc23c82402477c2.jpg"
@@ -179,7 +177,7 @@
       "image": "/images/menu/pastries/0e76d3e6ce0b9942242362e064528689.jpg"
     }
   ],
-  "Salads": [
+  "Pastries": [
     {
       "name": "Babka Cheese and Olive",
       "image": "/images/menu/salads/724297eea1d4c78040ced6f22ed7771b.jpg"
@@ -207,9 +205,7 @@
     {
       "name": "Brownie",
       "image": "/images/menu/salads/cd79a2adea01af0db42476e1d87c4bf9.jpg"
-    }
-  ],
-  "Toasties": [
+    },
     {
       "name": "Cookie",
       "image": "/images/menu/toasties/c00b32875b095af771cd90d88c97e35d.jpg"
@@ -233,7 +229,9 @@
     {
       "name": "Raisin Cinnamon Swirls",
       "image": "/images/menu/toasties/140478b032bf46041711f929f2fff5e0.jpg"
-    },
+    }
+  ],
+  "Salads": [
     {
       "name": "Grilled Chicken Quinoa Salad",
       "image": "/images/menu/toasties/f5f98fa15302b2a34b14032e12f88d7c.jpg"
@@ -245,7 +243,9 @@
     {
       "name": "Rustic Salad",
       "image": "/images/menu/toasties/ab65e585bf501cf9122734fe9be0ac67.jpg"
-    },
+    }
+  ],
+  "Toasties": [
     {
       "name": "Avocado & Egg (Pouched -Boiled - Fried)",
       "image": "/images/menu/toasties/5a97786040a17c9f6dfbce35d7686037.jpg"

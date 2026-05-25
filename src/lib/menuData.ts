@@ -28,9 +28,9 @@ export const allMenuItems: MenuItem[] = menuCategories.flatMap((c) => c.items);
 // Featured items for home page
 export const featuredItems = [
   menuCategories[0]?.items[2], // Caffeino Signature Bagel
-  menuCategories[1]?.items[3], // Acai Bowl
-  menuCategories[2]?.items[5], // Carrot Cake
-  menuCategories[3]?.items[0], // Chocolate Fudge Cake
+  menuCategories[1]?.items[2], // Acai Bowl With 3 Toppings
+  menuCategories[2]?.items[1], // Carrot Cake
+  menuCategories[3]?.items[0], // Almond Croissant
 ].filter(Boolean);
 
 // Merchandise data
