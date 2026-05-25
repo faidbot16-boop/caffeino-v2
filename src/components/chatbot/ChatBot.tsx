@@ -149,6 +149,13 @@ export default function ChatBot() {
     return "That's a great question! I'd recommend checking with our team directly for the most accurate info. You can WhatsApp us at +971 50 9999 712 or email info@caffeino.ae. Or feel free to ask me about our menu, hours, or locations!";
   };
 
+  const renderContent = (text: string) => {
+    const html = text
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>");
+    return <span dangerouslySetInnerHTML={{ __html: html }} />;
+  };
+
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString("en-US", {
       hour: "2-digit",
@@ -227,7 +234,7 @@ export default function ChatBot() {
                           : "bg-white text-text-primary rounded-bl-sm border border-border"
                       }`}
                     >
-                      <p className="text-sm whitespace-pre-line leading-relaxed">{msg.content}</p>
+                      <p className="text-sm whitespace-pre-line leading-relaxed">{renderContent(msg.content)}</p>
                       <p
                         className={`text-[10px] mt-1.5 ${
                           msg.role === "user" ? "text-white/70" : "text-text-muted"
