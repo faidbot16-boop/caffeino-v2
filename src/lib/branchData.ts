@@ -9,6 +9,7 @@ export interface Branch {
     weekend: string;
   };
   mapUrl: string;
+  mapLink: string;
   features: string[];
 }
 
@@ -23,8 +24,9 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI3JzE0LjAiTiA1NMKwMjInMzguMyJF!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    features: ["Indoor & Outdoor Seating", "Free WiFi", "Parking Available", "Pet Friendly Terrace"],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdef!2sCaffeino%20Al%20Bateen%20Marina!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
+    mapLink: "https://maps.app.goo.gl/CaffeinoAlBateen",
+    features: ["Indoor & Outdoor Seating", "Free WiFi", "Parking Available", "Pet Friendly Terrace", "Waterfront Views"],
   },
   {
     id: "mahawi",
@@ -36,8 +38,9 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI3JzE0LjAiTiA1NMKwMjInMzguMyJF!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    features: ["Indoor Seating", "Free WiFi", "Drive-Thru Available"],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdf0!2sCaffeino%20Mahawi!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
+    mapLink: "https://maps.app.goo.gl/CaffeinoMahawi",
+    features: ["Indoor Seating", "Free WiFi", "Drive-Thru Available", "Quick Service"],
   },
   {
     id: "al-bahia",
@@ -49,8 +52,9 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI3JzE0LjAiTiA1NMKwMjInMzguMyJF!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    features: ["Indoor & Outdoor Seating", "Free WiFi", "Kids Play Area"],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdf1!2sCaffeino%20Al%20Bahia!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
+    mapLink: "https://maps.app.goo.gl/CaffeinoAlBahia",
+    features: ["Indoor & Outdoor Seating", "Free WiFi", "Kids Play Area", "Family Friendly"],
   },
   {
     id: "khalifa-city",
@@ -62,8 +66,9 @@ export const branches: Branch[] = [
       weekday: "7:00 AM – 11:00 PM",
       weekend: "7:00 AM – 12:00 AM",
     },
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI3JzE0LjAiTiA1NMKwMjInMzguMyJF!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
-    features: ["Indoor Seating", "Free WiFi", "Meeting Room Available"],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.123456789!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e68697f20d6a5%3A0x1234567890abcdf2!2sCaffeino%20Khalifa%20City!5e0!3m2!1sen!2sae!4v1600000000000!5m2!1sen!2sae",
+    mapLink: "https://maps.app.goo.gl/CaffeinoKhalifaCity",
+    features: ["Indoor Seating", "Free WiFi", "Meeting Room Available", "Work Friendly"],
   },
 ];
 

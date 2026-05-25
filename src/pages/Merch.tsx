@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ShoppingBag, Check } from "lucide-react";
+import { ShoppingBag, Check, X, Plus } from "lucide-react";
+import { useCart } from "../lib/cartContext";
 import { merchItems } from "../lib/menuData";
 
 const productImages: Record<string, string> = {
@@ -11,8 +12,105 @@ const productImages: Record<string, string> = {
   "giftcard-01": "/images/product_giftcard.jpg",
 };
 
+function ProductModal({ item, onClose }: { item: typeof merchItems[0]; onClose: () => void }) {
+  const { addItem } = useCart();
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    addItem({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image: productImages[item.id],
+    });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="bg-bg-cream rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="aspect-video overflow-hidden">
+          <img
+            src={productImages[item.id]}
+            alt={item.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6">
+          <div className="flex items-start justify-between mb-2">
+            <h3 className="text-2xl font-serif font-bold text-text-primary">{item.name}</h3>
+            <button onClick={onClose} className="w-8 h-8 rounded-full bg-bg-card flex items-center justify-center text-text-secondary hover:text-accent">
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          <p className="text-text-secondary mb-4">{item.description}</p>
+          <div className="flex items-center justify-between">
+            <span className="text-2xl font-bold text-accent">AED {item.price}</span>
+            {!item.inStock ? (
+              <span className="text-text-muted">Coming soon</span>
+            ) : (
+              <button
+                onClick={handleAdd}
+                className={`px-6 py-3 rounded-full font-medium transition-all flex items-center gap-2 ${
+                  added
+                    ? "bg-green-500 text-white"
+                    : "bg-accent text-white hover:bg-accent-hover"
+                }`}
+              >
+                {added ? (
+                  <>
+                    <Check className="w-4 h-4" /> Added to Cart
+                  </>
+                ) : (
+                  <>
+                    <Plus className="w-4 h-4" /> Add to Cart
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function Merch() {
+  const { addItem } = useCart();
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
+  const [addedIds, setAddedIds] = useState<Set<string>>(new Set());
+
+  const handleAdd = (item: typeof merchItems[0]) => {
+    addItem({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image: productImages[item.id],
+    });
+    setAddedIds((prev) => new Set(prev).add(item.id));
+    setTimeout(() => {
+      setAddedIds((prev) => {
+        const next = new Set(prev);
+        next.delete(item.id);
+        return next;
+      });
+    }, 2000);
+  };
+
+  const selectedItem = merchItems.find((i) => i.id === selectedProduct);
 
   return (
     <motion.div
@@ -46,7 +144,8 @@ export default function Merch() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="glass-card rounded-xl overflow-hidden group hover:shadow-lg transition-shadow"
+              className="glass-card rounded-xl overflow-hidden group hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => setSelectedProduct(item.id)}
             >
               {/* Product Image */}
               <div className="aspect-square overflow-hidden bg-bg-card">
@@ -65,21 +164,23 @@ export default function Merch() {
 
               <div className="p-6">
                 <h3 className="text-text-primary font-medium text-lg mb-2">{item.name}</h3>
-                <p className="text-text-secondary text-sm mb-4">{item.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-accent text-xl font-bold">AED {item.price}</span>
                   {!item.inStock ? (
                     <span className="text-text-muted text-sm">Coming soon</span>
                   ) : (
                     <button
-                      onClick={() => setSelectedProduct(selectedProduct === item.id ? null : item.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAdd(item);
+                      }}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                        selectedProduct === item.id
+                        addedIds.has(item.id)
                           ? "bg-green-500 text-white"
                           : "bg-accent text-white hover:bg-accent-hover"
                       }`}
                     >
-                      {selectedProduct === item.id ? (
+                      {addedIds.has(item.id) ? (
                         <span className="flex items-center gap-1">
                           <Check className="w-4 h-4" /> Added
                         </span>
@@ -105,6 +206,11 @@ export default function Merch() {
           </p>
         </div>
       </div>
+
+      {/* Product Modal */}
+      {selectedItem && (
+        <ProductModal item={selectedItem} onClose={() => setSelectedProduct(null)} />
+      )}
     </motion.div>
   );
 }

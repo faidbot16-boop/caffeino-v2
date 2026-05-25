@@ -40,11 +40,20 @@ function SteamParticles() {
 function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bg-cream via-bg-dark to-bg-warm" />
-      
-      {/* Ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          poster="/images/menu/breakfast/5cc0d3a3f9faf6ed42723555f236366a.jpg"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
       
       <SteamParticles />
       
@@ -54,7 +63,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium mb-6 backdrop-blur-sm">
             Abu Dhabi's Finest Specialty Coffee
           </span>
         </motion.div>
@@ -65,18 +74,18 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-6"
         >
-          <span className="text-text-primary">Where Every</span>
+          <span className="text-white">Where Every</span>
           <br />
-          <span className="gradient-text">Sip Tells</span>
+          <span className="text-white/90">Sip Tells</span>
           <br />
-          <span className="text-text-primary">a Story</span>
+          <span className="text-white">a Story</span>
         </motion.h1>
         
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10"
         >
           Single-origin coffee, artisanal pastries, and all-day brunch 
           served across four iconic Abu Dhabi locations.
@@ -94,7 +103,7 @@ function HeroSection() {
           </Link>
           <Link
             to="/order"
-            className="px-6 py-3 rounded-full border border-border text-text-primary hover:border-accent hover:text-accent transition-all"
+            className="px-6 py-3 rounded-full border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all"
           >
             Order Online
           </Link>
@@ -134,9 +143,9 @@ function HeroSection() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-border flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
         >
-          <div className="w-1 h-2 bg-accent rounded-full" />
+          <div className="w-1 h-2 bg-white rounded-full" />
         </motion.div>
       </motion.div>
     </section>

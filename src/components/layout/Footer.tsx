@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Coffee, Phone, Mail, MapPin, Globe, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Globe, MessageSquare } from "lucide-react";
 import { socialLinks, mainPhone, mainEmail } from "../../lib/branchData";
 
 const footerLinks = {
@@ -30,10 +30,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <Coffee className="w-6 h-6 text-accent" />
-              <span className="text-xl font-serif font-bold tracking-wider">
-                CΛFFEINO
-              </span>
+              <img src="/logo.png" alt="Caffeino" className="h-10 w-auto" />
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">
               Abu Dhabi's premier specialty coffee destination. Serving carefully curated coffee, 

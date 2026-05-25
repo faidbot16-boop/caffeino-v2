@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, MessageCircle, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, Navigation, ExternalLink } from "lucide-react";
 import { branches } from "../lib/branchData";
 
 export default function Branches() {
@@ -38,7 +38,7 @@ export default function Branches() {
               onClick={() => setActiveBranch(index)}
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                 activeBranch === index
-                  ? "bg-accent text-bg-dark"
+                  ? "bg-accent text-white"
                   : "bg-bg-warm text-text-secondary hover:text-text-primary border border-border"
               }`}
             >
@@ -127,7 +127,7 @@ export default function Branches() {
                 WhatsApp
               </a>
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branches[activeBranch].address)}`}
+                href={branches[activeBranch].mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2.5 rounded-full border border-border text-text-primary hover:border-accent hover:text-accent transition-all text-sm inline-flex items-center gap-2"
@@ -174,6 +174,16 @@ export default function Branches() {
                 <h3 className="text-text-primary font-medium mb-2">{branch.name}</h3>
                 <p className="text-text-secondary text-sm mb-3">{branch.address}</p>
                 <p className="text-text-muted text-xs">{branch.phone}</p>
+                <a
+                  href={branch.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 text-accent text-xs mt-2 hover:underline"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  Open in Maps
+                </a>
               </motion.div>
             ))}
           </div>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Bike, ShoppingBag, Truck } from "lucide-react";
-import { orderUrl } from "../lib/branchData";
+import { ExternalLink, Bike, ShoppingBag, Phone } from "lucide-react";
 
 const platforms = [
   {
@@ -11,25 +10,18 @@ const platforms = [
     color: "#FF5A00",
   },
   {
-    name: "Deliveroo",
-    description: "Premium delivery experience",
-    icon: Truck,
-    url: "https://deliveroo.ae/caffeino",
-    color: "#00CCBC",
-  },
-  {
-    name: "Noon",
-    description: "Quick and reliable",
+    name: "Noon Food",
+    description: "Order via Noon Food",
     icon: ShoppingBag,
-    url: "https://www.noon.com/uae/caffeino",
+    url: "https://food.noon.com/outlet/CFFNZQ5PEE-Caffeino/",
     color: "#F7C30F",
   },
   {
-    name: "Caffeino Direct",
-    description: "Order directly from us",
-    icon: ExternalLink,
-    url: orderUrl,
-    color: "#C4A484",
+    name: "Order by Phone",
+    description: "Call us directly to order",
+    icon: Phone,
+    url: "tel:+97126668887",
+    color: "#A23A2D",
   },
 ];
 
