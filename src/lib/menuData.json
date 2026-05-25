@@ -1,0 +1,266 @@
+{
+  "Bagel Sandwich": [
+    {
+      "name": "Beef & Brie",
+      "image": "/images/menu/bagel_sandwich/a525494021e926ad8955f1be7c09128d.jpg"
+    },
+    {
+      "name": "Breakfast Bagel",
+      "image": "/images/menu/bagel_sandwich/f9d14c8f9633433aa5f2ea8cad103cf0.jpg"
+    },
+    {
+      "name": "Caffeino Signature Bagel",
+      "image": "/images/menu/bagel_sandwich/819047381c71b72e88becefe2167ac67.jpg"
+    },
+    {
+      "name": "Cajun Chicken Bagel",
+      "image": "/images/menu/bagel_sandwich/0900eff9bbd8c786bcf1fe780e82e4ee.jpg"
+    },
+    {
+      "name": "Caprese",
+      "image": "/images/menu/bagel_sandwich/80c21e1c1ce42929499f2cf045e2b6c0.jpg"
+    },
+    {
+      "name": "Cranberry Jeweled Turkey Melts",
+      "image": "/images/menu/bagel_sandwich/bff343f4476bfe52921b1f8b25fd8f1d.jpg"
+    },
+    {
+      "name": "Egg and Avocado Bagel",
+      "image": "/images/menu/bagel_sandwich/115cf4e262026efc7bf4a7caccbcd43f.jpg"
+    }
+  ],
+  "Breakfast": [
+    {
+      "name": "Everything Veggie",
+      "image": "/images/menu/breakfast/a9e3adab051fbd286dcc56c9bc281abb.jpg"
+    },
+    {
+      "name": "Halloumi Bagel",
+      "image": "/images/menu/breakfast/9e749f62dad93f6fc5dd5e03ec58cb95.jpg"
+    },
+    {
+      "name": "Smoked Salmon",
+      "image": "/images/menu/breakfast/e4eb82aa4bc0e3e1f69baa86cd5e6eb3.jpg"
+    },
+    {
+      "name": "Acai Bowl With 3 Toppings",
+      "image": "/images/menu/breakfast/e7cf7d4cab7e917e8478ef875887f69a.jpg"
+    },
+    {
+      "name": "Australian Folded Eggs",
+      "image": "/images/menu/breakfast/235cff32fca1135f0a62c8775519394b.jpg"
+    },
+    {
+      "name": "Bread Basket (Butter & Jam)",
+      "image": "/images/menu/breakfast/0edd833cf22366b74ffdc9c7656ab94e.jpg"
+    },
+    {
+      "name": "Classic Brioche French Toast",
+      "image": "/images/menu/breakfast/5cc0d3a3f9faf6ed42723555f236366a.jpg"
+    }
+  ],
+  "Cakes": [
+    {
+      "name": "Eggs Benedict",
+      "image": "/images/menu/cakes/f9778adf8af11ee5499be17c45a4091e.jpg"
+    },
+    {
+      "name": "Halloumi Breakfast Bowl",
+      "image": "/images/menu/cakes/f2ab41a3f16a96df7148f0c9f730ba72.jpg"
+    },
+    {
+      "name": "Oriental Egg",
+      "image": "/images/menu/cakes/eb67952a45e54b7725676c761362b34c.jpg"
+    },
+    {
+      "name": "Shakhshuka",
+      "image": "/images/menu/cakes/199c6bca7259239f433fc2a112f6fcb3.jpg"
+    },
+    {
+      "name": "Acai Cheese Cake",
+      "image": "/images/menu/cakes/e1cd048baa0c1ffa875d5865c8faa85e.jpg"
+    },
+    {
+      "name": "Carrot Cake",
+      "image": "/images/menu/cakes/35d89c7fc8d21b0d8d90bc4d266914b6.jpg"
+    },
+    {
+      "name": "Cheese Cake Flan",
+      "image": "/images/menu/cakes/3a2a4c167937ec50a9405bcf03a049a9.jpg"
+    }
+  ],
+  "Croissants": [
+    {
+      "name": "Chocolate Fudge Cake",
+      "image": "/images/menu/croissants/49f58bab8d1946a297287611e0664235.jpg"
+    },
+    {
+      "name": "Coconut cake",
+      "image": "/images/menu/croissants/ae138e3490ceba7447518921a51273a2.jpg"
+    },
+    {
+      "name": "Honey Cake",
+      "image": "/images/menu/croissants/5105598d6606e26624ba5c3875fad36c.jpg"
+    },
+    {
+      "name": "Kunafa Mistica cake",
+      "image": "/images/menu/croissants/8debe67caa6002fb9c3e84af33f28ef0.jpg"
+    },
+    {
+      "name": "Lotus Cake",
+      "image": "/images/menu/croissants/19e4a6d1c4d8180a57aa6eec70d08af0.jpg"
+    },
+    {
+      "name": "Mahalabia Cake",
+      "image": "/images/menu/croissants/d04615b460065670f6882ce8a3bcac81.jpg"
+    },
+    {
+      "name": "One and Only Chocolate Cake",
+      "image": "/images/menu/croissants/be440fcfcdd97aa7a4f08016fdec94d9.jpg"
+    }
+  ],
+  "Main Course": [
+    {
+      "name": "Pistachio Cake",
+      "image": "/images/menu/main_course/2ce0e3ab95e8adf4d4bfb04b1f86e784.jpg"
+    },
+    {
+      "name": "Pistachio Rahash Cake",
+      "image": "/images/menu/main_course/d5ffd29868b0250e3f2db05a86edf895.jpg"
+    },
+    {
+      "name": "Strawberry  Cake",
+      "image": "/images/menu/main_course/63d23565dbd8aa4d5bb0da4a5e0c53be.jpg"
+    },
+    {
+      "name": "Almond Croissant",
+      "image": "/images/menu/main_course/292c609bad4481fc8a0a2af25ce9f1fa.jpg"
+    },
+    {
+      "name": "Butter Croissant",
+      "image": "/images/menu/main_course/24d40077417c1550feb652fe1fc3b4f4.jpg"
+    },
+    {
+      "name": "Cheese Croissant",
+      "image": "/images/menu/main_course/7774a5d7b17592d7b459097fd3bafc1c.jpg"
+    },
+    {
+      "name": "Chocolate Croissant",
+      "image": "/images/menu/main_course/73c04e312e9b80a405591d1db10fa831.jpg"
+    }
+  ],
+  "Pastries": [
+    {
+      "name": "Halloumi Croissant",
+      "image": "/images/menu/pastries/d67d51bed390b9b56524bd12a959f3e8.jpg"
+    },
+    {
+      "name": "Pistachio Croissant",
+      "image": "/images/menu/pastries/ab4901a7345197be6e63a77500799edc.jpg"
+    },
+    {
+      "name": "Zaatar and Mozzarella Croissant",
+      "image": "/images/menu/pastries/47b73793866e7c77a4d56e753921f01f.jpg"
+    },
+    {
+      "name": "Zaatar Croissant",
+      "image": "/images/menu/pastries/9089e49cf7af4fae05b89f470131c95a.jpg"
+    },
+    {
+      "name": "Chicken with Spicy Mushroom Sauce",
+      "image": "/images/menu/pastries/04710d1cc57cfc569cc23c82402477c2.jpg"
+    },
+    {
+      "name": "Grilled Salmon",
+      "image": "/images/menu/pastries/4167342b61c870429c690b454a575aae.jpg"
+    },
+    {
+      "name": "Risotto",
+      "image": "/images/menu/pastries/0e76d3e6ce0b9942242362e064528689.jpg"
+    }
+  ],
+  "Salads": [
+    {
+      "name": "Babka Cheese and Olive",
+      "image": "/images/menu/salads/724297eea1d4c78040ced6f22ed7771b.jpg"
+    },
+    {
+      "name": "Babka Chocolate",
+      "image": "/images/menu/salads/7079474cfb2682c4c16959ae72b6d509.jpg"
+    },
+    {
+      "name": "Babka Lotus",
+      "image": "/images/menu/salads/f40872ce22a6d68ef99575be7471f107.jpg"
+    },
+    {
+      "name": "Babka Nutella",
+      "image": "/images/menu/salads/aa41dcb74165eb2136c943452231de93.jpg"
+    },
+    {
+      "name": "Babka Pistachio",
+      "image": "/images/menu/salads/3d267c96b797c980dbc1772a5c6d297d.jpg"
+    },
+    {
+      "name": "Banana Chocolate Danish",
+      "image": "/images/menu/salads/214aad5a2b74d10f4f09117f18521f75.jpg"
+    },
+    {
+      "name": "Brownie",
+      "image": "/images/menu/salads/cd79a2adea01af0db42476e1d87c4bf9.jpg"
+    }
+  ],
+  "Toasties": [
+    {
+      "name": "Cookie",
+      "image": "/images/menu/toasties/c00b32875b095af771cd90d88c97e35d.jpg"
+    },
+    {
+      "name": "Danish Strawberry",
+      "image": "/images/menu/toasties/b408078f5a5d546a8d9d8f3bf090a971.jpg"
+    },
+    {
+      "name": "English Scones",
+      "image": "/images/menu/toasties/4da312d36f9202256dcec1e6e734e73e.jpg"
+    },
+    {
+      "name": "Nutty Square",
+      "image": "/images/menu/toasties/85e3a29c69283f739078d70070a3018b.jpg"
+    },
+    {
+      "name": "Pecan Pie",
+      "image": "/images/menu/toasties/4f632491528093109a3d90f3093b47b5.jpg"
+    },
+    {
+      "name": "Raisin Cinnamon Swirls",
+      "image": "/images/menu/toasties/140478b032bf46041711f929f2fff5e0.jpg"
+    },
+    {
+      "name": "Grilled Chicken Quinoa Salad",
+      "image": "/images/menu/toasties/f5f98fa15302b2a34b14032e12f88d7c.jpg"
+    },
+    {
+      "name": "Kale Salad",
+      "image": "/images/menu/toasties/012e3c839ffdb7ac448c4e599a6e72b0.jpg"
+    },
+    {
+      "name": "Rustic Salad",
+      "image": "/images/menu/toasties/ab65e585bf501cf9122734fe9be0ac67.jpg"
+    },
+    {
+      "name": "Avocado & Egg (Pouched -Boiled - Fried)",
+      "image": "/images/menu/toasties/5a97786040a17c9f6dfbce35d7686037.jpg"
+    },
+    {
+      "name": "Caffeino PB Jam",
+      "image": "/images/menu/toasties/24cd85ce2ad485a7917c1d9113897f73.jpg"
+    },
+    {
+      "name": "Omelette",
+      "image": "/images/menu/toasties/a31997d0c1ff69c583eef80f7bd35ce5.jpg"
+    },
+    {
+      "name": "Scrambled",
+      "image": "/images/menu/toasties/3cb0c9c9d2042346b4b1e4e205fc7c7f.jpg"
+    }
+  ]
+}
