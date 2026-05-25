@@ -131,7 +131,7 @@ export default function ChatBot() {
       return "We're always looking for passionate people! Current openings include Barista, Head Chef, and Shift Supervisor. Check our Careers page to apply.";
     }
     if (lower.includes("merch") || lower.includes("mug") || lower.includes("tumbler")) {
-      return "Our merch collection includes ceramic mugs (AED 45), glass tumblers (AED 60), and house coffee beans (AED 70). Available in-store!";
+      return "Our merch collection includes ceramic mugs (AED 45), glass tumblers (AED 60), canvas totes (AED 55), and gift cards (from AED 100). Available in-store!";
     }
     if (lower.includes("wifi") || lower.includes("laptop")) {
       return "Yes! All our locations have free high-speed WiFi and plenty of seating perfect for working. Grab a coffee and stay as long as you need!";
@@ -174,7 +174,7 @@ export default function ChatBot() {
         className={`fixed bottom-6 right-6 z-[2000] w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all ${
           isOpen ? "bg-text-primary text-white" : "bg-accent text-white hover:bg-accent-hover"
         }`}
-        style={{ boxShadow: "0 8px 32px rgba(162, 58, 45, 0.3)" }}
+        style={{ boxShadow: "0 8px 32px rgba(192, 57, 43, 0.3)" }}
       >
         {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
       </motion.button>

@@ -21,7 +21,7 @@ const platforms = [
     description: "Call us directly to order",
     icon: Phone,
     url: "tel:+97126668887",
-    color: "#A23A2D",
+    color: "#C0392B",
   },
 ];
 

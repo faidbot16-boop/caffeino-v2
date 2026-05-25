@@ -7,7 +7,6 @@ import { merchItems } from "../lib/menuData";
 const productImages: Record<string, string> = {
   "mug-01": "/images/product_mug.jpg",
   "tumbler-01": "/images/product_keepcup.jpg",
-  "beans-01": "/images/product_beans.jpg",
   "tote-01": "/images/product_tote.jpg",
   "giftcard-01": "/images/product_giftcard.jpg",
 };

@@ -59,13 +59,6 @@ export const merchItems: MerchItem[] = [
     inStock: true,
   },
   {
-    id: "beans-01",
-    name: "House Coffee Beans 250g",
-    price: 70,
-    description: "Single-origin Ethiopian beans, medium roast. Notes of citrus and chocolate.",
-    inStock: true,
-  },
-  {
     id: "tote-01",
     name: "Caffeino Canvas Tote",
     price: 55,
