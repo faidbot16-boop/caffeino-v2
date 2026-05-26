@@ -13,7 +13,6 @@ import Events from "./pages/Events";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import ChatBot from "./components/chatbot/ChatBot";
-import CustomCursor from "./components/CustomCursor";
 
 const pageVariants = {
   initial: { opacity: 0, y: 12 },
@@ -66,7 +65,6 @@ function App() {
           </main>
           <Footer />
           <ChatBot />
-          <CustomCursor />
         </div>
       </CartProvider>
     </Router>
